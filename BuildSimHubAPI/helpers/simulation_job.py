@@ -400,6 +400,8 @@ class SimulationJob(object):
                 else:
                     # print(self.track_status)
                     return True
+            elif resp_json['status'] == 'queued':
+                print("Simulation ID:" + resp_json['tracking'] + " is in a queue")
             else:
                 return resp_json['error_msg']
         else:

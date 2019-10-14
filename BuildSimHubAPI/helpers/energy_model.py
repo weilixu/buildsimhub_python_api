@@ -85,7 +85,7 @@ class Model(object):
     def log(self):
         return self._log
 
-    def bldg_geo(self, data=None, browser=True):
+    def bldg_geo(self, data=None, browser=False):
         """
         This method will ...?
         :param data:
@@ -121,9 +121,9 @@ class Model(object):
             if self._logger is not None:
                 self._logger.write_in_message('Model', 'IDF3DViewer', self._project_api_key, self._track_token, '200',
                                               resp_json['link'])
-            # if browser:
-            # webbrowser.open(resp_json['link'])
-                return resp_json['link']
+            if browser:
+                webbrowser.open(resp_json['link'])
+                return resp_json['status']
             else:
                 return resp_json['link']
 

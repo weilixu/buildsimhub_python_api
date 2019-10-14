@@ -103,6 +103,7 @@ class DiscreteMeasureOptionTemplate(object):
 
         option_list = list()
         for temp in self._template_group:
+
             option_list.append(temp)
         option_temp['template_group'] = option_list
 
